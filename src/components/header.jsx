@@ -52,18 +52,12 @@ function Header() {
           <a href="#portfolio" className="cursor-pointer">
             Portfolio
           </a>
-          <div
-            className="cursor-pointer"
-            onClick={() => document.getElementById("contact").scrollIntoView()}
-          >
+          <a href="#contact" className="cursor-pointer">
             Contact
-          </div>
-          <div
-            className="cursor-pointer"
-            onClick={() => document.getElementById("resume").scrollIntoView()}
-          >
+          </a>
+          <a href="#resume" className="cursor-pointer">
             Resume
-          </div>
+          </a>
         </div>
         <div
           onClick={() => setMobileMenu(true)}
@@ -92,46 +86,38 @@ function Header() {
             className="text-[2rem]"
           />
         </div>
-        <div
-          onClick={() => {
-            setMobileMenu(false);
-            document.getElementById("about").scrollIntoView();
-          }}
+        <a
+          href="#about"
+          onClick={() => setMobileMenu(false)}
           className="flex items-center space-x-3"
         >
           <PersonIcon className="text-white" />
           <div>About Me</div>
-        </div>
-        <div
-          onClick={() => {
-            setMobileMenu(false);
-            document.getElementById("projects").scrollIntoView();
-          }}
+        </a>
+        <a
+          href="#portfolio"
+          onClick={() => setMobileMenu(false)}
           className="flex items-center space-x-3"
         >
           <ProjectIcon className="text-white" />
           <div>Portfolio</div>
-        </div>
-        <div
-          onClick={() => {
-            setMobileMenu(false);
-            document.getElementById("contact").scrollIntoView();
-          }}
+        </a>
+        <a
+          href="#contact"
+          onClick={() => setMobileMenu(false)}
           className="flex items-center space-x-3"
         >
           <ContactIcon className="text-white" />
           <div>Contact</div>
-        </div>
-        <div
-          onClick={() => {
-            setMobileMenu(false);
-            document.getElementById("resume").scrollIntoView();
-          }}
+        </a>
+        <a
+          href="#resume"
+          onClick={() => setMobileMenu(false)}
           className="flex items-center space-x-3"
         >
           <PdfIcon className="text-white" />
           <div>Resume</div>
-        </div>
+        </a>
       </div>
       {/* Mobile Menu End  */}
 
@@ -146,13 +132,14 @@ function Header() {
           <div className="mt-3 md:mt-0 text-[1.75rem] md:text-[2rem]">
             Full Stack Developer
           </div>
-          <Button
-            onClick={() => document.getElementById("about").scrollIntoView()}
-            variant="contained"
-            className="bg-primary hover:bg-primary mt-5 text-[1rem] md:text-[1.25rem]"
-          >
-            About Me
-          </Button>
+          <a href="#about">
+            <Button
+              variant="contained"
+              className="bg-primary hover:bg-primary mt-5 text-[1rem] md:text-[1.25rem]"
+            >
+              About Me
+            </Button>
+          </a>
         </div>
         <div className="flex flex-row md:flex-col md:space-y-3 mt-12 md:mt-0 space-x-5 md:space-x-0">
           <InstagramIcon
@@ -164,7 +151,7 @@ function Header() {
             className="text-[3rem] md:text-[4rem] cursor-pointer hover:scale-[1.1] transition-all"
           />
           <GithubIcon
-            onClick={() => window.open("https://github.com/007jag")}
+            onClick={() => window.open("https://github.com/")}
             className="text-[3rem] md:text-[4rem] cursor-pointer hover:scale-[1.1] transition-all"
           />
         </div>

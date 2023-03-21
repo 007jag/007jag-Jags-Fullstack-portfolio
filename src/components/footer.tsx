@@ -5,7 +5,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 
 function Footer() {
   return (
-    <div className="flex flex-col items-center p-5 bg-secondary">
+    <div className="flex flex-col items-center p-5  py-12 bg-background text-white">
       <div className="text-[1.2rem] font-semibold">
         Copyright © 2023 Jagmit Cheema
       </div>
