@@ -1,53 +1,44 @@
 import React from "react";
 import { Button } from "@mui/material";
 import DownloadIcon from "@mui/icons-material/Download";
-
-// Logo
-import HtmlLogo from "src/assets/logo/html.png";
-import CssLogo from "src/assets/logo/css.png";
-import JavascriptLogo from "src/assets/logo/javascript.png";
-import NodejsLogo from "src/assets/logo/nodejs.png";
-import PostgreLogo from "src/assets/logo/postgre.png";
-import GraphqlLogo from "src/assets/logo/graphql.png";
-import ReactLogo from "src/assets/logo/react.png";
-import ReduxLogo from "src/assets/logo/redux.png";
-
-const techStack = [
-  {
-    name: "HTML",
-    image: HtmlLogo,
-  },
-  {
-    name: "CSS",
-    image: CssLogo,
-  },
-  {
-    name: "JavaScript",
-    image: JavascriptLogo,
-  },
-  {
-    name: "Node JS",
-    image: NodejsLogo,
-  },
-  {
-    name: "Postgre SQL",
-    image: PostgreLogo,
-  },
-  {
-    name: "GraphQL",
-    image: GraphqlLogo,
-  },
-  {
-    name: "React",
-    image: ReactLogo,
-  },
-  {
-    name: "Redux",
-    image: ReduxLogo,
-  },
-];
+import Logos from "../assets/logo";
 
 function Resume() {
+  const techStack = [
+    {
+      name: "HTML",
+      image: Logos.HtmlLogo,
+    },
+    {
+      name: "CSS",
+      image: Logos.CssLogo,
+    },
+    {
+      name: "JavaScript",
+      image: Logos.JavascriptLogo,
+    },
+    {
+      name: "Node JS",
+      image: Logos.NodejsLogo,
+    },
+    {
+      name: "Postgre SQL",
+      image: Logos.PostgreLogo,
+    },
+    {
+      name: "GraphQL",
+      image: Logos.GraphqlLogo,
+    },
+    {
+      name: "React",
+      image: Logos.ReactLogo,
+    },
+    {
+      name: "Redux",
+      image: Logos.ReduxLogo,
+    },
+  ];
+
   return (
     <div id="resume" className="p-5 bg-secondary py-12 lg:py-16">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-12">

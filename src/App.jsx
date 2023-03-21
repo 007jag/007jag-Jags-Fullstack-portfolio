@@ -1,14 +1,17 @@
-import { createTheme, ThemeProvider } from "@mui/material";
-import { green } from "@mui/material/colors";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
+
+// Toastify
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+// Components
 import About from "./components/about";
 import Contact from "./components/contact";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import Portfolio from "./components/portfolio";
 import Resume from "./components/resume";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 
 function App() {
     useEffect(() => {
