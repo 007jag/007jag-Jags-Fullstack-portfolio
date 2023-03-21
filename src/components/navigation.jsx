@@ -1,27 +1,61 @@
-import { useState, useEffect } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useState, useEffect } from "react";
 import JcLogo from "../assets/jc_logo.png";
 
-function Navigation({ setMobileMenu }) {
+function Navigation({ mobileMenu, setMobileMenu, currentSection }) {
+  const NavigationList = [
+    {
+      id: "about",
+      label: "About Me",
+    },
+    {
+      id: "portfolio",
+      label: "Portfolio",
+    },
+    {
+      id: "contact",
+      label: "Contact",
+    },
+    {
+      id: "resume",
+      label: "Resume",
+    },
+  ];
+
   return (
-    <nav className="md:h-[20%] flex items-center justify-between max-w-[1180px] mx-auto">
-      <img className="h-[3rem] md:h-[5rem] w-auto" src={JcLogo} alt="" />
-      <div className="hidden md:flex items-center space-x-10 font-semibold text-[1.2rem]">
-        <a href="#about" className="cursor-pointer">
-          About Me
+    <nav
+      className={`${
+        currentSection === "header"
+          ? "md:h-[20%]"
+          : "fixed top-[0%] left-[0%] w-full bg-background p-5 z-[99]"
+      }`}
+    >
+      <div
+        className={`flex items-center justify-between max-w-[1180px] mx-auto`}
+      >
+        <a href="#header">
+          <img className="h-[3rem] w-auto" src={JcLogo} alt="" />
         </a>
-        <a href="#portfolio" className="cursor-pointer">
-          Portfolio
-        </a>
-        <a href="#contact" className="cursor-pointer">
-          Contact
-        </a>
-        <a href="#resume" className="cursor-pointer">
-          Resume
-        </a>
-      </div>
-      <div onClick={() => setMobileMenu(true)} className="md:hidden text-white">
-        <MenuIcon className="text-[2rem]" />
+        <div className="hidden md:flex items-center space-x-10 font-semibold text-[1.2rem]">
+          {NavigationList.map((x) => {
+            return (
+              <a
+                href={`#${x.id}`}
+                className={`cursor-pointer ${
+                  x.id === currentSection ? "text-primary" : ""
+                } transition-all`}
+              >
+                {x.label}
+              </a>
+            );
+          })}
+        </div>
+        <div
+          onClick={() => setMobileMenu(!mobileMenu)}
+          className="md:hidden text-white"
+        >
+          <MenuIcon className="text-[2rem]" />
+        </div>
       </div>
     </nav>
   );

@@ -16,51 +16,61 @@ import Navigation from "./navigation";
 
 function Header() {
   const [mobileMenu, setMobileMenu] = useState(false);
-  const [floatingNav, setFloatingNav] = useState(false);
 
-  const headerRef = useRef(null);
+  const [currentSection, setCurrentSection] = useState("header");
 
-  const obsCallback = (entries) => {
-    if (entries[0].isIntersecting) {
-      setFloatingNav(true);
-    } else {
-      setFloatingNav(false);
+  const sections = ["header", "about", "portfolio", "contact", "resume"];
+
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY + 200; // Add some offset to make sure the active section changes before the user reaches the next one
+
+    for (const section of sections) {
+      const element = document.getElementById(section);
+
+      if (element) {
+        if (
+          element.offsetTop <= scrollPosition &&
+          element.offsetTop + element.offsetHeight > scrollPosition
+        ) {
+          setCurrentSection(section);
+          break;
+        }
+      }
     }
   };
 
   useEffect(() => {
-    const sectionObserver = new IntersectionObserver(obsCallback, {
-      root: null,
-      threshold: 0.3,
-    });
-
-    sectionObserver.observe(headerRef.current);
-  }, [headerRef]);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div
       id="header"
-      ref={headerRef}
       className="bg-background p-5 md:px-12 md:h-screen text-white"
     >
       {/* Navigation  */}
-
-      <Navigation setMobileMenu={setMobileMenu} />
+      <Navigation
+        setMobileMenu={setMobileMenu}
+        currentSection={currentSection}
+      />
 
       {/* Mobile Menu  */}
       <div
         onClick={() => setMobileMenu(false)}
         className={`${
           mobileMenu ? "opacity-1 visible" : "opacity-0 invisible"
-        } transition-all absolute left-0 top-0 right-0 bottom-0 bg-black/[0.3]`}
+        } transition-all fixed left-0 top-0 right-0 bottom-0 bg-black/[0.3] z-[999]`}
       ></div>
       <div
         className={`${
           mobileMenu ? "translate-x-0" : "translate-x-[-100%]"
-        } transition-all fixed z-[99] left-0 top-0 bottom-0 w-full z-[999] max-w-[60%] bg-background p-5 flex flex-col space-y-8 h-full`}
+        } transition-all fixed left-0 top-0 bottom-0 w-full z-[999] max-w-[60%] bg-background p-5 flex flex-col space-y-8 h-full`}
       >
         <div className="flex items-center justify-between">
-          <img src={JcLogo} alt="" className="h-[4rem] w-auto" />
+        <a href="#header" onClick={() => setMobileMenu(false)}>
+            <img src={JcLogo} alt="" className="h-[4rem] w-auto" />
+          </a>
           <ChevronLeftIcon
             onClick={() => setMobileMenu(false)}
             className="text-[2rem]"
@@ -69,33 +79,41 @@ function Header() {
         <a
           href="#about"
           onClick={() => setMobileMenu(false)}
-          className="flex items-center space-x-3"
+          className={`${
+            currentSection === "about" ? "text-primary" : "text-white"
+          } flex items-center space-x-3`}
         >
-          <PersonIcon className="text-white" />
+          <PersonIcon />
           <div>About Me</div>
         </a>
         <a
           href="#portfolio"
           onClick={() => setMobileMenu(false)}
-          className="flex items-center space-x-3"
+          className={`${
+            currentSection === "portfolio" ? "text-primary" : "text-white"
+          } flex items-center space-x-3`}
         >
-          <ProjectIcon className="text-white" />
+          <ProjectIcon />
           <div>Portfolio</div>
         </a>
         <a
           href="#contact"
           onClick={() => setMobileMenu(false)}
-          className="flex items-center space-x-3"
+          className={`${
+            currentSection === "contact" ? "text-primary" : "text-white"
+          } flex items-center space-x-3`}
         >
-          <ContactIcon className="text-white" />
+          <ContactIcon />
           <div>Contact</div>
         </a>
         <a
           href="#resume"
           onClick={() => setMobileMenu(false)}
-          className="flex items-center space-x-3"
+          className={`${
+            currentSection === "resume" ? "text-primary" : "text-white"
+          } flex items-center space-x-3`}
         >
-          <PdfIcon className="text-white" />
+          <PdfIcon />
           <div>Resume</div>
         </a>
       </div>
