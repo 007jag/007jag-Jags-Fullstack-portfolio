@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import JcLogo from "../assets/jc_logo.png";
 
-function Navigation() {
+function Navigation({ setMobileMenu }) {
   return (
     <nav className="md:h-[20%] flex items-center justify-between max-w-[1180px] mx-auto">
       <img className="h-[3rem] md:h-[5rem] w-auto" src={JcLogo} alt="" />

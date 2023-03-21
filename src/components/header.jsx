@@ -44,8 +44,8 @@ function Header() {
       className="bg-background p-5 md:px-12 md:h-screen text-white"
     >
       {/* Navigation  */}
-      
-      <Navigation />
+
+      <Navigation setMobileMenu={setMobileMenu} />
 
       {/* Mobile Menu  */}
       <div
