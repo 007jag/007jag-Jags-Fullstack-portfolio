@@ -54,7 +54,7 @@ export default function Projects() {
   return (
     <>
       <div id="portfolio" className="py-12 bg-secondary">
-        <div className="text-center text-[2rem] font-semibold">Projects</div>
+        <div className="text-center text-[2rem] font-semibold">Portfolio</div>
         <Swiper
           grabCursor={true}
           loop={true}

@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "@mui/material";
 import DownloadIcon from "@mui/icons-material/Download";
 import Logos from "../assets/logo";
-import SamplePdf from "src/assets/sample.pdf";
+import SamplePdf from "../assets/sample.pdf";
 
 function Resume() {
   const techStack = [
