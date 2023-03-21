@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "@mui/material";
 import DownloadIcon from "@mui/icons-material/Download";
 import Logos from "../assets/logo";
+import SamplePdf from "src/assets/sample.pdf";
 
 function Resume() {
   const techStack = [
@@ -44,7 +45,7 @@ function Resume() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
         {techStack?.map((x) => {
           return (
-            <div className="flex flex-col items-center space-y-5">
+            <div className="hover:scale-[1.1] transition-all cursor-pointer flex flex-col items-center space-y-5">
               <img className="h-[5rem] lg:h-[8rem]" src={x.image} alt="" />
               <div className="font-semibold text-[1.2rem] lg:text-[1.5rem]">
                 {x.name}
@@ -54,13 +55,15 @@ function Resume() {
         })}
       </div>
       <div className="flex justify-center mt-12">
-        <Button
-          variant="contained"
-          endIcon={<DownloadIcon />}
-          className="bg-primary text-white hover:bg-primary text-[1.2rem]"
-        >
-          Download Resume
-        </Button>
+      <a href={SamplePdf} download>
+          <Button
+            variant="contained"
+            endIcon={<DownloadIcon />}
+            className="bg-primary text-white hover:bg-primary text-[1.2rem]"
+          >
+            Download Resume
+          </Button>
+        </a>
       </div>
     </div>
   );
