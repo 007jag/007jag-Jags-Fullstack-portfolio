@@ -13,8 +13,8 @@ function About() {
               Hello! I'm Jagmit Cheema, a Fullstack Developer with a year of experience. 
               My expertise lies in both front-end and back-end development using languages 
               like HTML, JavaScript, CSS, React, and I'm comfortable working with databases 
-              such as Node.js, Express.js, and MongoDB. I have a passion for staying current 
-              with the latest tech trends and am always looking to broaden my skill set. 
+              and am currently using the MERN stack. I have a passion for staying current with 
+              the latest tech trends and am always looking to broaden my skill set. 
           </div>
         </div>
         <div className="w-full lg:w-[40%] mt-10 lg:mt-0">
