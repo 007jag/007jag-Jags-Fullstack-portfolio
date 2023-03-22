@@ -42,7 +42,7 @@ function Resume() {
 
   return (
     <div id="resume" className="p-5 bg-secondary py-12 lg:py-16">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
+      <div className="max-w-[1180px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-12">
         {techStack?.map((x) => {
           return (
             <div className="hover:scale-[1.1] transition-all cursor-pointer flex flex-col items-center space-y-5">
@@ -55,7 +55,7 @@ function Resume() {
         })}
       </div>
       <div className="flex justify-center mt-12">
-      <a href={SamplePdf} download>
+        <a href={SamplePdf} download>
           <Button
             variant="contained"
             endIcon={<DownloadIcon />}

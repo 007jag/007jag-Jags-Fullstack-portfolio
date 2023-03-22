@@ -18,7 +18,6 @@ function Header() {
   const [mobileMenu, setMobileMenu] = useState(false);
 
   const [currentSection, setCurrentSection] = useState("header");
-
   const sections = ["header", "about", "portfolio", "contact", "resume"];
 
   const handleScroll = () => {
@@ -68,7 +67,7 @@ function Header() {
         } transition-all fixed left-0 top-0 bottom-0 w-full z-[999] max-w-[60%] bg-background p-5 flex flex-col space-y-8 h-full`}
       >
         <div className="flex items-center justify-between">
-        <a href="#header" onClick={() => setMobileMenu(false)}>
+          <a href="#header" onClick={() => setMobileMenu(false)}>
             <img src={JcLogo} alt="" className="h-[4rem] w-auto" />
           </a>
           <ChevronLeftIcon

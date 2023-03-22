@@ -12,21 +12,20 @@ import Header from "./components/header";
 import Portfolio from "./components/portfolio";
 import Resume from "./components/resume";
 
-
 function App() {
-    useEffect(() => {
-        const hash = window.location.hash;
-        if (hash) {
-          const currentSection = document.querySelector(hash);
-          if (currentSection) {
-            currentSection.scrollIntoView();
-          }
-        }
-      }, []);
-    
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const currentSection = document.querySelector(hash);
+      if (currentSection) {
+        currentSection.scrollIntoView();
+      }
+    }
+  }, []);
+
   return (
     <div>
-         <ToastContainer
+      <ToastContainer
         autoClose={2000}
         progressStyle={{ background: "#B41A22" }}
       />

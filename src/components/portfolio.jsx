@@ -54,7 +54,7 @@ export default function Projects() {
   return (
     <>
       <div id="portfolio" className="py-12 bg-secondary">
-        <div className="text-center text-[2rem] font-semibold">Portfolio</div>
+        <div className="text-center text-[2rem] font-semibold">Portfolios</div>
         <Swiper
           grabCursor={true}
           loop={true}
@@ -80,7 +80,7 @@ export default function Projects() {
                 <div className="bg-white drop-shadow-lg rounded-md overflow-hidden">
                   <div>
                     <img
-                      className="h-[10rem] lg:h-[15rem] 2xl:h-[25rem] w-full object-cover"
+                      className="h-[10rem] lg:h-[15rem] w-full object-cover"
                       src={x.image}
                     />
                   </div>
