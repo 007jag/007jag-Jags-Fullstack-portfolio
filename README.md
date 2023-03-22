@@ -3,6 +3,7 @@ this is my portfolio website that includes my project, contact information, resu
 
 ## Table of Contents
 - [Live Site](#live-site)
+- [screenshots](#screenshots)
 - [Tech Used](#tech-used)
 - [Installation](#installation)
 - [Contribution](#contribution)
@@ -10,6 +11,14 @@ this is my portfolio website that includes my project, contact information, resu
 
 ### Live Site
 https://007jag.github.io/007jag-Jags-Fullstack-portfolio/
+
+### screenshots
+
+(![Alt text](src/assets/Screenshot%202023-03-22%20004106.png))
+(![Alt text](src/assets/Screenshot%202023-03-22%20004143.png))
+(![Alt text](src/assets/Screenshot%202023-03-22%20004154.png))
+(![Alt text](src/assets/Screenshot%202023-03-22%20004204.png))
+(![Alt text](src/assets/Screenshot%202023-03-22%20004226.png))
 
 
 ### Tech Used
