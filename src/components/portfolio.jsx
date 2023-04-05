@@ -10,6 +10,7 @@ import { Pagination } from "swiper";
 import { Button } from "@mui/material";
 import ComingSoon from "../assets/coming_soon.png";
 import HorrorFolder from "../assets/horror_finder.png";
+import Tripstogo from "../assets/tripstogo.png";
 
 const projectList = [
   {
@@ -18,9 +19,9 @@ const projectList = [
     image: HorrorFolder,
   },
   {
-    name: "This is my Project",
-    link: "https://github.com/jNighton/Horror-Finder",
-    image: ComingSoon,
+    name: "Tripstogo",
+    link: "https://github.com/Dcao23/TripsTogo",
+    image: Tripstogo,
   },
   {
     name: "This is my Project",
